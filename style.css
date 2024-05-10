@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --Blue: hsl(223, 87%, 63%);
+  --Pale-Blue: hsl(223, 100%, 88%);
+  --Light-Red: hsl(354, 100%, 66%);
+
+  --Gray: hsl(0, 0%, 59%);
+  --Very-Dark-Blue: hsl(209, 33%, 12%);
+
+  --ff-primary: "Libre Franklin", sans-serif;
+
+  --br: 999rem;
+}
+
+/* For box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Removes default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* List elements */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/*  root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.2;
+}
+
+/* Default styles for elements that do not have a class*/
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Global styling for images*/
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+ul {
+  padding-left: 0;
+}
+
+body {
+  padding: 5rem 2rem 2rem;
+  font-family: var(--ff-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.logo {
+  margin: 1rem auto 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--Gray);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+span {
+  color: var(--Very-Dark-Blue);
+  font-weight: 700;
+}
+
+h3 {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--Gray);
+  margin-bottom: 2rem;
+}
+
+form {
+/* display: grid;
+grid-template-columns: repeat(1, minmax(0, 1fr)); */
+display: flex;
+flex-direction: column;
+  gap: 0.3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-container {
+  width: 100%;
+}
+
+.email {
+ width: 100%;
+
+  border-radius: var(--br);
+  padding: 0.8rem 2rem;
+  border: 1px solid var(--Pale-Blue);
+}
+
+::placeholder {
+  color: var(--Pale-Blue);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.success {
+    color: green;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 0.2rem;
+  }
+  
+  .success input {
+    border-color: #09c372;
+  }
+  
+  .error input {
+    border-color: #ff3860;
+  }
+  
+  .error {
+    color: var(--Light-Red);
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 0.2rem;
+    font-style: italic;
+    text-align: center;
+  }
+  
+
+a {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.form-button {
+  width: 100%;
+  border-radius: var(--br);
+  padding: 0.8rem 1rem;
+  background-color: var(--Blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-button:hover {
+    opacity: .6;
+}
+
+footer {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.fa-brands {
+  width: 1rem;
+  height: 1rem;
+  color: var(--Blue);
+  border: 1px solid var(--Pale-Blue);
+  border-radius: var(--br);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .8rem;
+  font-size: .8rem;
+}
+
+p {
+  text-align: center;
+  font-size: .6rem;
+  color: var(--Gray);
+}
+
+
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 30rem;
+        margin: 0 auto;
+    }
+   
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: none;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    form {
+        flex-direction: row;
+        width: 70%;
+        margin: 0 auto;
+        gap: 1rem;
+    }
+
+    .error {
+        text-align: left;
+    }
+    
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 40rem;
+    }
+
+    form {
+
+        width: 100%;
+    }
+
+    .email-container {
+        width: 65%;
+    }
+
+    form .form-button {
+        width: 30%;
+        align-self: flex-start;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
